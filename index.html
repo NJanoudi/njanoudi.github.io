@@ -1,17 +1,420 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>CS-499 ePortfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Nawras Janoudi's SNHU CS-499 Computer Science Capstone ePortfolio showcasing software design, algorithms and data structures, databases, QA engineering, and SDET-focused work." />
+  <title>Nawras Janoudi | CS-499 Capstone ePortfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
+
 <body>
-  <h1>Welcome to My CS-499 ePortfolio</h1>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="screen-noise" aria-hidden="true"></div>
+  <div class="pixel-grid" aria-hidden="true"></div>
 
-  <p>Name: Nawras Janoudi</p>
-  <p>Program: BS Computer Science - SNHU</p>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="site-logo" aria-label="Nawras Janoudi portfolio home">
+        <img src="assets/logo.svg" alt="" class="site-logo-img" />
+        <span class="site-logo-text">Nawras<span>QA</span></span>
+      </a>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>CS-465 Full-Stack Application</li>
-  </ul>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"
+        aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#self-assessment">Self-Assessment</a></li>
+        <li><a href="#code-review">Code Review</a></li>
+        <li><a href="#capstone">Capstone</a></li>
+        <li><a href="#artifacts">Artifacts</a></li>
+        <li><a href="#outcomes">Outcomes</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <aside class="floating-arcade collapsed" aria-labelledby="floating-arcade-title">
+    <button class="arcade-tab" type="button" aria-expanded="false" aria-controls="arcade-panel">
+      <span aria-hidden="true">▣</span> Bug Hunt
+    </button>
+
+    <div class="arcade-panel" id="arcade-panel">
+      <div class="arcade-header">
+        <div>
+          <p class="mini-label">QA mini game</p>
+          <h2 id="floating-arcade-title">Bug Hunt</h2>
+        </div>
+        <button class="arcade-close" type="button" aria-label="Collapse Bug Hunt game">×</button>
+      </div>
+      <p class="arcade-help">Move the tester, catch bugs, and keep the build green.</p>
+      <canvas id="bug-game" width="330" height="190" role="img"
+        aria-label="Mini arcade game where a QA tester catches software bugs before they reach production."></canvas>
+      <div class="arcade-scoreboard" aria-live="polite">
+        <span>Score: <strong id="bug-score">0</strong></span>
+        <span>Escaped: <strong id="bug-escaped">0</strong></span>
+      </div>
+      <div class="arcade-controls" aria-label="Bug Hunt controls">
+        <button type="button" data-move="left">←</button>
+        <button type="button" id="bug-start">Start Scan</button>
+        <button type="button" data-move="right">→</button>
+        <button type="button" id="bug-reset">Reset</button>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <p class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span> SNHU CS-499 Final ePortfolio</p>
+          <h1 id="hero-title">Nawras Janoudi</h1>
+          <h2>Software QA Engineer | Computer Science Graduate | Aspiring SDET</h2>
+          <p class="hero-text">
+            This ePortfolio presents my CS-499 Computer Science Capstone work, including a code review, original and
+            enhanced artifacts, enhancement narratives, and my professional self-assessment. My focus is quality-first
+            software engineering, test automation readiness, and building more reliable full-stack applications.
+          </p>
+          <div class="button-group" aria-label="Portfolio actions">
+            <a class="btn btn-primary" href="#self-assessment">Self-Assessment</a>
+            <a class="btn btn-secondary" href="#code-review">Code Review</a>
+            <a class="btn btn-secondary" href="#capstone">View Capstone</a>
+          </div>
+        </div>
+
+        <aside class="hero-card console-card reveal" aria-label="Capstone completion dashboard">
+          <div class="card-glow"></div>
+          <div class="console-topbar" aria-hidden="true">
+            <span></span><span></span><span></span>
+            <p>capstone-checks.sh</p>
+          </div>
+          <div class="terminal-window" aria-label="Animated capstone terminal summary">
+            <p><span class="terminal-prompt">nawras@portfolio</span>: run final-project-checks</p>
+            <ul class="test-log" id="test-log">
+              <li><span>PASS</span> code review included</li>
+              <li><span>PASS</span> software design enhancement completed</li>
+              <li><span>PASS</span> algorithms enhancement completed</li>
+              <li><span>PASS</span> database enhancement completed</li>
+            </ul>
+            <p class="terminal-cursor">portfolio ready for review<span aria-hidden="true">_</span></p>
+          </div>
+          <ul class="hero-stats">
+            <li><span>6+</span><small>Years in Software QA</small></li>
+            <li><span>3</span><small>Enhanced Capstone Areas</small></li>
+            <li><span>5</span><small>Program Outcomes Mapped</small></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="self-assessment" aria-labelledby="self-title">
+      <div class="container two-column top-align">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Professional Self-Assessment</p>
+          <h2 id="self-title">Quality-first engineering with an automation mindset</h2>
+        </div>
+        <div class="section-copy reveal">
+          <p>
+            Throughout the Computer Science program, I strengthened my ability to analyze software systems, communicate
+            technical decisions, and build solutions that balance functionality, maintainability, security, and user
+            experience. My professional background as a Software QA Engineer shaped how I approached this capstone: I
+            focused on improving reliability, validating user input, reducing defects, and designing features that can
+            be
+            tested and maintained over time.
+          </p>
+          <p>
+            My long-term goal is to continue growing toward test automation and Software Development Engineer in Test
+            roles. The artifacts in this portfolio demonstrate that direction through full-stack development, Angular
+            design improvements, algorithmic data processing, MongoDB relationship modeling, and secure handling of user
+            workflows. Together, these enhancements show how my QA experience and computer science coursework support a
+            practical, industry-focused path toward advanced quality engineering.
+          </p>
+          <p>
+            The capstone artifacts that follow fit together as one progressive improvement of the CS-465 Travlr
+            application. The software design enhancement improved structure and route protection, the algorithms and
+            data structures enhancement improved trip browsing through search, sorting, and pagination, and the database
+            enhancement added a persistent reservation system using MongoDB and Mongoose relationships.
+          </p>
+          <div class="button-group compact">
+            <a class="btn btn-primary btn-disabled" href="#" aria-disabled="true" onclick="return false;">
+              Read Full Self-Assessment (Available Soon)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="code-review" aria-labelledby="code-review-title">
+      <div class="container two-column top-align">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Milestone One</p>
+          <h2 id="code-review-title">Code Review Video</h2>
+          <p>
+            The code review analyzes the original CS-465 Travlr artifact before enhancement, identifies areas for
+            improvement, and explains the planned changes across software design, algorithms, and databases.
+          </p>
+        </div>
+        <article class="resource-card reveal">
+          <h3>Informal Code Review</h3>
+
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-VJScHG9VE8"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="capstone" aria-labelledby="capstone-title">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Capstone Project</p>
+          <h2 id="capstone-title">CS-465 Travlr Full-Stack Application</h2>
+          <p>
+            A MEAN stack travel application originally developed in CS-465 and enhanced in CS-499 to demonstrate
+            software design and engineering, algorithms and data structures, and databases.
+          </p>
+        </div>
+
+        <div class="capstone-overview reveal">
+          <div>
+            <h3>Project Overview</h3>
+            <p>
+              The Travlr application includes a public travel site, an Angular admin interface, a Node/Express API, and
+              MongoDB data storage. My enhancements improved route protection and validation, added dynamic trip list
+              processing, and introduced a MongoDB-backed reservation system that links authenticated users to trips.
+            </p>
+          </div>
+          <a class="text-link" href="https://github.com/NJanoudi/cs465-fullstack" target="_blank"
+            rel="noopener noreferrer">View Repository →</a>
+        </div>
+
+        <div class="enhancement-track" aria-label="Capstone enhancement cards">
+          <article class="feature-card reveal">
+            <div class="icon" aria-hidden="true">01</div>
+            <p class="card-kicker">Software Design &amp; Engineering</p>
+            <h3>Route Protection, Validation, and Error Handling</h3>
+            <p>Improved Angular architecture by centralizing admin route protection and strengthening form handling.</p>
+            <ul>
+              <li>Created Angular route guard</li>
+              <li>Protected admin-only routes</li>
+              <li>Improved Add/Edit Trip validation</li>
+              <li>Added user-friendly error handling</li>
+            </ul>
+            <a class="text-link" href="documents/milestone-two-narrative.pdf" target="_blank"
+              rel="noopener noreferrer">Read narrative →</a>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="icon" aria-hidden="true">02</div>
+            <p class="card-kicker">Algorithms &amp; Data Structures</p>
+            <h3>Search, Sorting, and Pagination</h3>
+            <p>Replaced simple trip rendering with a data-processing pipeline for better usability and scalability.</p>
+            <ul>
+              <li>Linear search across trip fields</li>
+              <li>Comparator-based sorting</li>
+              <li>Index-based pagination</li>
+              <li>Separate arrays for data states</li>
+            </ul>
+            <a class="text-link" href="documents/milestone-three-narrative.pdf" target="_blank"
+              rel="noopener noreferrer">Read narrative →</a>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="icon" aria-hidden="true">03</div>
+            <p class="card-kicker">Databases</p>
+            <h3>MongoDB Reservation System</h3>
+            <p>Added a reservation collection that connects authenticated users with selected trips.</p>
+            <ul>
+              <li>Mongoose Reservation schema</li>
+              <li>ObjectId user and trip references</li>
+              <li>Reservation CRUD operations</li>
+              <li>Compound indexing and population</li>
+            </ul>
+            <a class="text-link" href="documents/milestone-four-narrative.pdf" target="_blank"
+              rel="noopener noreferrer">Read narrative →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="artifacts" aria-labelledby="artifacts-title">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Artifacts &amp; Narratives</p>
+          <h2 id="artifacts-title">Original and Enhanced Work</h2>
+          <p>
+            This section provides direct access to the original artifact, enhanced artifact, milestone narratives, and
+            supporting capstone documents.
+          </p>
+        </div>
+
+        <div class="artifact-grid">
+          <article class="resource-card reveal">
+            <h3>Original Artifact</h3>
+            <p>Original CS-465 Travlr project before CS-499 enhancements.</p>
+            <a class="btn btn-secondary" href="artifacts/original-travlr.zip" target="_blank"
+              rel="noopener noreferrer">Download Original ZIP</a>
+          </article>
+          <article class="resource-card reveal">
+            <h3>Enhanced Artifact</h3>
+            <p>Final enhanced CS-499 Travlr project with all three enhancement categories.</p>
+            <a class="btn btn-primary" href="artifacts/enhanced-travlr.zip" target="_blank"
+              rel="noopener noreferrer">Download Enhanced ZIP</a>
+          </article>
+          <article class="resource-card reveal">
+            <h3>Professional Self-Assessment</h3>
+            <p>Holistic introduction to my background, skills, course outcomes, and capstone artifacts.</p>
+            <a class="btn btn-secondary" href="documents/professional-self-assessment.pdf" target="_blank"
+              rel="noopener noreferrer">Read Self-Assessment</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="outcomes" aria-labelledby="outcomes-title">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Program Outcomes</p>
+          <h2 id="outcomes-title">How the Portfolio Meets CS Outcomes</h2>
+          <p>The following mapping makes the five CS-499 program outcomes visible across the code review, enhancements,
+            narratives, and self-assessment.</p>
+        </div>
+
+        <div class="outcome-grid">
+          <article class="outcome-card reveal">
+            <span>Outcome 1</span>
+            <h3>Collaborative Environments</h3>
+            <p>Demonstrated through code review practices, clear documentation, QA communication, and decisions that
+              support developers, testers, and stakeholders.</p>
+          </article>
+          <article class="outcome-card reveal">
+            <span>Outcome 2</span>
+            <h3>Professional Communication</h3>
+            <p>Demonstrated through the code review video, written narratives, ePortfolio presentation, and professional
+              self-assessment.</p>
+          </article>
+          <article class="outcome-card reveal">
+            <span>Outcome 3</span>
+            <h3>Algorithmic Solutions</h3>
+            <p>Demonstrated through trip search, comparator sorting, pagination, collection processing, and discussion
+              of algorithmic trade-offs.</p>
+          </article>
+          <article class="outcome-card reveal">
+            <span>Outcome 4</span>
+            <h3>Tools and Techniques</h3>
+            <p>Demonstrated through Angular, TypeScript, Node.js, Express, MongoDB, Mongoose, GitHub, and full-stack
+              enhancement work.</p>
+          </article>
+          <article class="outcome-card reveal">
+            <span>Outcome 5</span>
+            <h3>Security Mindset</h3>
+            <p>Demonstrated through route guards, JWT-protected reservation routes, validation, user-specific data
+              access, and safer error handling.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="before-after" aria-labelledby="before-after-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Before vs. After</p>
+          <h2 id="before-after-title">Growth Across the Same Artifact</h2>
+        </div>
+        <div class="comparison-grid">
+          <article class="comparison-card reveal">
+            <h3>Software Design</h3>
+            <p><strong>Before:</strong> Authentication checks were repeated inside multiple Angular components.</p>
+            <p><strong>After:</strong> Route protection was centralized with a reusable Angular route guard.</p>
+          </article>
+          <article class="comparison-card reveal">
+            <h3>Algorithms</h3>
+            <p><strong>Before:</strong> Trips were displayed with basic rendering and limited data processing.</p>
+            <p><strong>After:</strong> Trips pass through search, sorting, and pagination before display.</p>
+          </article>
+          <article class="comparison-card reveal">
+            <h3>Databases</h3>
+            <p><strong>Before:</strong> The database primarily stored users and trips.</p>
+            <p><strong>After:</strong> A reservation collection links users and trips through ObjectId references.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="section section-muted" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Skills</p>
+          <h2 id="skills-title">Technical Skills</h2>
+          <p>Skills developed through coursework, professional QA work, and CS-499 capstone enhancements.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <h3>Frontend</h3>
+            <p>Angular, HTML, CSS, JavaScript, TypeScript</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Backend</h3>
+            <p>Node.js, Express, API Design</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Databases</h3>
+            <p>MongoDB, Mongoose, Schemas, Relationships</p>
+          </article>
+          <article class="skill-card reveal featured-skill">
+            <h3>QA / Testing</h3>
+            <p>Manual Testing, Test Planning, Validation, Defect Tracking, Automation Scripting</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Tools</h3>
+            <p>GitHub, Git, VS Code, Postman, OBS</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-card reveal">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Let’s Connect</h2>
+          <p>I am open to connecting about QA engineering, test automation, SDET opportunities, and software engineering
+            projects.</p>
+        </div>
+        <div class="contact-links" aria-label="Contact links">
+          <a class="contact-card" href="https://github.com/NJanoudi" target="_blank" rel="noopener noreferrer"
+            aria-label="Visit my GitHub profile">
+            <i class="fa-brands fa-github contact-icon"></i><span>GitHub</span>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/nawras-janoudi/" target="_blank"
+            rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">
+            <i class="fa-brands fa-linkedin contact-icon"></i><span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="year"></span> Nawras Janoudi</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
